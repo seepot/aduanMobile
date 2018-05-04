@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-navbar color="block1">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Pengesahan Aduan</ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="submit()" large><ion-icon name="checkmark" style="font-size:25px"></ion-icon></button>
+       </ion-buttons>
+  
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding id="confirmation">
+    <ion-list>
+        <ion-item text-wrap><p>{{kesalahan}}</p></ion-item>
+           
+        <ion-item [hidden]="videoCapture === null">
+          <ion-thumbnail item-left (click)="play(videoCapture)">
+            <video width="300px" height="300px" controls autoplay #myvideo>
+          </video>
+          </ion-thumbnail>
+          </ion-item>
+        <ion-item>
+          <img src="{{pathForImage(lastImage)}}" style="width: 200px" [hidden]="lastImage === null">
+        </ion-item> 
+       <ion-item>
+         <h3>Tarikh</h3>
+         {{tarikh}}
+       </ion-item>
+       <ion-item>
+         <h3>Masa</h3>
+         {{masa}}
+       </ion-item>
+       <ion-item>
+         <h3>Lokasi</h3>
+         {{lokasi}}
+       </ion-item>
+       <ion-item>
+         <h3>No Kenderaan</h3>
+         {{nokenderaan}}
+       </ion-item>
+       <ion-item>
+         <h3>Keterangan</h3>
+         {{catatan}}
+       </ion-item>
+   </ion-list>
+</ion-content>

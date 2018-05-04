@@ -1,0 +1,128 @@
+page-home {
+    #home{
+        background: color($colors, light);
+        h1{
+            font-size: 14px;
+            margin: 0px 0px 0px 0px;
+            text-transform: capitalize;
+            color: map-get($map: $colors, $key: primary);
+            vertical-align: baseline;
+            align-items: center;
+        }
+
+        height: 100%;
+        vertical-align: baseline;
+
+        .text{
+          display: table-cell;
+    vertical-align: middle;
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
+    padding: 20px;
+    text-transform: capitalize;
+        }
+
+        img {
+          height: 70px;
+          width: 70px;
+          float:left;
+    vertical-align:middle;;
+        }
+
+        ion-icon {
+            font-size: 20px;
+          }
+        
+          ion-row {
+            height: 100%;
+            flex-wrap: wrap;
+          }
+        
+          ion-col {
+            flex: 0 0 25%;
+            max-width: 25%;
+            text-align: center;
+            padding: 5px 5px;
+          }
+
+          .list .item {
+            background-color: map-get($map: $colors, $key: energy);
+            border-width: 0px;
+            margin : 0px 0px 0px 0px;
+            border-style: ridge;
+            border-color: #C0C0C0;
+            vertical-align: baseline;
+            text-align: left;
+            padding-top: 0px;
+          }
+          
+          .card {
+            background-color: map-get($map: $colors, $key: energy);
+            //color: map-get($map: $colors, $key: primary);
+            //color : #e74c3c;
+            //margin-bottom:30px;
+            border-width: 0px;
+            //margin : 0px 0px 0px 0px;
+            //padding:0px 0px 0px 0px;
+          }
+
+          .alertCustomCss {
+            color: white; // text color for basic alerts
+            button {
+                color: white !important;
+                background-color: color($colors, secondary, base) !important;
+            }
+            .alert-message {
+                color: white; // text color for confirm alerts
+            }
+            .alert-wrapper {
+                background-color: color($colors, dark, base);
+            }
+          }
+    }
+}
+
+.grid-basic-page {
+
+    ion-col div {
+      background-color: #f0f5ff;
+      border: 1px solid #e6e9ee;
+      border-radius: 2px;
+      padding: 5px;
+      text-align: center;
+    }
+  
+    p {
+      padding: 10px 0 0 10px !important;
+      margin: 0;
+    }
+  
+  }
+  .alertcss{
+    color:#e74c3c;
+    }
+
+    .action-sheets-basic-page {
+      //font-size: 70px;
+      .ion-md-share {
+        color: #ED4248;
+      }
+      .ion-md-arrow-dropright-circle {
+        color: #508AE4;
+      }
+      .ion-md-heart-outline {
+        color: #31D55F;
+      }
+      .action-sheet-cancel ion-icon,
+      .action-sheet-destructive ion-icon {
+        color: #757575;
+      }
+    }
+
+    .title-image {
+      vertical-align: middle;
+    }
+     
+    .box {
+      display:flex;
+      align-items:center;
+   }

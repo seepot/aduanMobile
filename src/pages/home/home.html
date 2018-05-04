@@ -1,0 +1,29 @@
+
+<ion-header>
+  <ion-navbar color="block1">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Aduan Trafik</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding id="home">
+   <ion-list *ngFor="let p of kesalahan; let i = index" class="list">
+          <ion-card text-wrap (click)="openMenu(p.id)">
+
+                 <div class="box">
+                <img src="assets/icon/{{p.icon}}" align="left">
+               <span class="text">{{p.title}}</span>
+              </div>
+          
+          </ion-card>
+
+      </ion-list>
+
+</ion-content>
+
+
+

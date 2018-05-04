@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="block1">
+    <ion-title>Kemaskini Profil</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="edit()"><ion-icon name="checkmark"></ion-icon></button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="editprofile">
+
+
+<ion-list>
+
+  <ion-item>
+    <ion-label stacked>Nama</ion-label>
+    <ion-input type="text" [(ngModel)]="userDetails.nama"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>No MyKad</ion-label>
+    <ion-input type="text" [(ngModel)]="userDetails.nokp"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label stacked>Emel</ion-label>
+    <ion-input type="email" [(ngModel)]="userDetails.emel"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Kata Laluan</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+      
+</ion-list>
+  
+</ion-content>

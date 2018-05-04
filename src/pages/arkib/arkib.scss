@@ -1,0 +1,20 @@
+page-arkib {
+    #arkib{
+        background: color($colors, energy);
+        h1{
+            font-size: 32px;
+            margin-top: 50px;
+            color: #ffffff;
+        }
+        p{
+            font-size:  10px;
+        }
+        h2{
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        height: 100%;
+        vertical-align: middle;
+    }
+}

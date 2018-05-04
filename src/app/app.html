@@ -1,0 +1,31 @@
+<ion-menu [content]="content">
+        
+        <ion-content  id="app">
+           
+          <ion-list >
+              <button ion-item detail-none>
+                <ion-grid >
+                  <ion-row center>
+                    <ion-col><img width="80"  src="assets/img/marty-avatar.png"/></ion-col>
+                    <ion-col justify-content="center"> <h3>Hi {{getUser()}}</h3>
+                      <p>Selamat Datang</p></ion-col>
+                  </ion-row>
+                </ion-grid>
+              </button>
+            <button detail-none menuClose ion-item *ngFor="let p of pages" [class.activeHighlight]=checkActive(p) (click)="openPage(p)">
+              <h3>{{p.title}}</h3>
+            </button>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+
+      <div *ngIf="showSplash" class="splash">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+      
+      
+      <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
+<!-- <ion-nav #content [root]="rootPage"></ion-nav> -->

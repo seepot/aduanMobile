@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar color="block1">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Pengesahan Aduan</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding id="confirmation">
+    <ion-list>
+        <ion-item><p>Gagal mematuhi lampu isyarat merah</p></ion-item>
+           
+       <ion-item>
+         <img height="80px" src="../assets/img/jpjlogo1.png">
+       </ion-item>
+     <ion-item>
+       <ion-label>Tarikh</ion-label>
+       <ion-datetime disabled="true" displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+     </ion-item>
+     <ion-item>
+       <ion-label>Masa</ion-label>
+       <ion-datetime float-left disabled="true" displayFormat="h:mm A"  [(ngModel)]="myDate"></ion-datetime>
+     </ion-item>
+     <ion-item>
+       <ion-label>Lokasi</ion-label>
+       <ion-input type="text" disabled="true" value="Jalan Teknokrat 5, Cyberjaya"></ion-input>
+     </ion-item>
+     <ion-item>
+       <ion-label>No Kenderaan</ion-label>
+       <ion-input type="text" disabled="true" value="ABC 1234" ></ion-input>
+     </ion-item>
+     <ion-item>
+       <ion-label stacked>Catatan/Maklumat Tambahan</ion-label>
+       <ion-textarea disabled="true" value="tiada" ></ion-textarea>
+ </ion-item>
+   </ion-list>
+   <button ion-button color="light" (click)="save()">Simpan</button>
+   <button ion-button float-right color="block1" (click)="submit()">Hantar</button>
+</ion-content>

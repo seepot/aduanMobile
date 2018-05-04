@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="block1">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Aduan Dihantar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding id="list">
+    <!--<ion-list *ngFor="let p of kesalahan; let i = index">
+        <ion-item-sliding >
+          <ion-item (click)="openModal()">
+            <h2>{{i+1}}) {{p.tarikh}}</h2>
+            <p>{{p.title}}</p>
+            <ion-badge item-end color="{{p.status}}"> {{p.status}}</ion-badge>
+          </ion-item>
+          <ion-item-options side="right">
+            <button ion-button (click)="unread(item)"color="danger">Arkib</button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+      <ion-list *ngIf="kesalahan.length == 0">
+          <ion-item-sliding >
+            <ion-item>
+              <h2>Tiada Rekod</h2>
+            </ion-item>
+          </ion-item-sliding>
+        </ion-list>
+     -->
+        <ion-list *ngFor="let p of aduan" >
+          <ion-item-sliding *ngIf="p.status != 'Draf' && p.status != 'Arkib'" >
+            <ion-item (click)="openModal(p.id)">
+              <h2>{{p.tarikh}}</h2>
+              <p>{{getKesalahanById(p.idkesalahan)}}</p>
+              <ion-badge item-end color="{{getStatus(p.status)}}"> {{getStatus(p.status)}}</ion-badge>
+            </ion-item>
+            <ion-item-options side="right" *ngIf="p.status != '2'">
+              <button ion-button (click)="arkib(p.id)"color="danger">Arkib</button>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+        <ion-list *ngIf="aduan.length == 0">
+            <ion-item-sliding >
+              <ion-item>
+                <h2>Tiada Rekod</h2>
+              </ion-item>
+            </ion-item-sliding>
+          </ion-list> 
+
+</ion-content>

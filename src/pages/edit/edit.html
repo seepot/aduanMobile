@@ -1,0 +1,59 @@
+<ion-header>
+
+    <ion-navbar  color="block1">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+      <ion-title>Draf Aduan</ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="saveData()" large><ion-icon name="bookmark" style="font-size:25px"></ion-icon></button>
+        <button ion-button (click)="submit()" large><ion-icon name="arrow-forward" style="font-size:25px"></ion-icon></button>
+       </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding id="edit">
+        <form *ngIf="form" [formGroup]="form" >
+            <!-- <form *ngIf="form" [formGroup]="form" (ngSubmit)="createItem()"> -->
+    <ion-list *ngFor="let p of aduan">
+         <ion-item text-wrap>
+           <p>{{getKesalahanById(p.idkesalahan)}}</p>
+           <ion-badge item-end color="Draf"> Draf</ion-badge>
+          </ion-item>
+            
+          <ion-item [hidden]="p.videoCapture === null">
+              <ion-thumbnail item-left (click)="play(p.videoCapture)">
+                <video width="300px" height="300px" controls autoplay #myvideo>
+              </video>
+              </ion-thumbnail>
+               
+              </ion-item>
+            <ion-item><img src="{{pathForImage(p.lastImage)}}" style="width: 100px; height:100px;" [hidden]="p.lastImage === null"></ion-item>
+      <ion-item>
+        <ion-label stacked>Tarikh</ion-label>
+        <ion-datetime formControlName="tarikh" displayFormat="DD/MM/YYYY" [(ngModel)]="p.tarikh"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Masa</ion-label>
+        <ion-datetime formControlName="masa" displayFormat="h:mm A" [(ngModel)]="p.masa"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Lokasi</ion-label>
+        <ion-input type="text" formControlName="lokasi" [(ngModel)]="p.lokasi"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>No Kenderaan</ion-label>
+        <ion-input type="text" formControlName="nokenderaan" [(ngModel)]="p.nokenderaan"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Catatan/Maklumat Tambahan</ion-label>
+        <ion-textarea formControlName="catatan" [(ngModel)]="p.catatan"></ion-textarea>
+  </ion-item>
+    </ion-list>
+    <!-- <button ion-button color="light" (click)="save()">Simpan</button>
+    <button ion-button float-right color="block1" (click)="submit()">SETERUSNYA</button> -->
+  </form>
+  </ion-content>
+  

@@ -1,0 +1,35 @@
+
+<ion-header>
+  <ion-navbar color="block1">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Aduan Trafik</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding id="home">
+  <!--<h1>Selamat Datang ke Sistem Aduan Trafik JPJ</h1>-->
+ 
+  <ion-buttons start>
+  <button ion-button full color="dark" margin-top="50px" (click)="salah1()">gagal mematuhi lampu isyarat merah</button>
+  <button ion-button full color="dark"  margin-top="50px">memotong garisan berkembar</button>
+  <button ion-button full color="dark"  margin-top="50px">menggunakan telefon bimbit semasa memandu</button>
+  <button ion-button full color="dark" margin-top="50px" >memandu di lorong kecemasan</button>
+  <button ion-button full color="dark" margin-top="50px" >tidak memakai tali pinggang keledar</button>
+  <button ion-button full color="dark" margin-top="50px" >bas tiada pemandu kedua bagi perjalanan melebihi 4 jam</button>
+  </ion-buttons>
+  
+  <!--<button ion-button color="dark"  (click)="logout()">Log Keluar</button>
+  <button ion-button color="dark"  (click)="camera()">Camera</button>-->
+  <ion-fab right bottom>
+    <button ion-fab color="block1" (click)="add()"><ion-icon name="add"></ion-icon></button>
+</ion-fab>
+
+
+</ion-content>
+
+
+

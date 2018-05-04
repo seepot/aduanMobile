@@ -1,0 +1,25 @@
+
+
+<ion-content padding id="login">
+
+  <ion-img src="images/jpjlogo.png"></ion-img>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Email Address</ion-label>
+      <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Password </ion-label>
+        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+      <button ion-button block color="block1" (click)="login(user)" margin-top="20px">Log Masuk</button>
+      <button ion-button color="light" clear (click)="password()">Lupa Kata Laluan</button>
+      <button ion-button float-right color="light" clear (click)="register()">Daftar</button>
+
+      <button ion-button block color="energy" clear (click)="log2()">Log 2</button>
+    </ion-list>
+    
+</ion-content>
+

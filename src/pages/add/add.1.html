@@ -1,0 +1,60 @@
+<!--
+  Generated template for the AddPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar  color="block1">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Aduan Baru</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding id="add">
+      <form *ngIf="form" [formGroup]="form" >
+          <!-- <form *ngIf="form" [formGroup]="form" (ngSubmit)="createItem()"> -->
+  <ion-list>
+       <ion-item text-wrap>
+         <p>Gagal mematuhi lampu isyarat merah</p>
+        </ion-item>
+          
+      <ion-item>
+          <input type="file" #fileInput style="visibility: hidden; height: 0px" name="files[]" (change)="processWebImage($event)" />
+          <div class="profile-image-wrapper" (click)="getPicture()">
+            <div class="profile-image-placeholder" *ngIf="!this.form.controls.profilePic.value">
+              <ion-icon name="image"></ion-icon>
+            </div>
+            <div class="profile-image" [style.backgroundImage]="getProfileImageStyle()" *ngIf="this.form.controls.profilePic.value"></div>
+          </div>
+      </ion-item>
+    <ion-item>
+      <ion-label stacked>Tarikh</ion-label>
+      <ion-datetime formControlName="tarikh" displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Masa</ion-label>
+      <ion-datetime formControlName="masa" displayFormat="h:mm A"   [(ngModel)]="myDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Lokasi</ion-label>
+      <ion-input type="text" formControlName="lokasi" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>No Kenderaan</ion-label>
+      <ion-input type="text" formControlName="nokenderaan"  ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Catatan/Maklumat Tambahan</ion-label>
+      <ion-textarea formControlName="catatan" ></ion-textarea>
+</ion-item>
+  </ion-list>
+  <button ion-button color="light" (click)="save()">Simpan</button>
+  <button ion-button float-right color="block1" (click)="submit()">Hantar</button>
+</form>
+</ion-content>

@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS aduan(id INTEGER PRIMARY KEY AUTOINCREMENT, idkesalahan INTEGER,tarikh TEXT,masa TEXT,lokasi TEXT, nokenderaan TEXT, catatan TEXT, status INTEGER, arkib INTEGER, idUser TEXT);

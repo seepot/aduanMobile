@@ -1,0 +1,82 @@
+<ion-header>
+
+  <ion-navbar  color="block1">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Aduan Baru</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="saveData()" large><ion-icon name="bookmark" style="font-size:25px"></ion-icon></button>
+      <button ion-button (click)="submit()" large><ion-icon name="arrow-forward" style="font-size:25px"></ion-icon></button>
+     </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding id="add">
+      <form *ngIf="form" [formGroup]="form" (ngSubmit)="saveData(form.value)">
+          <!-- <form *ngIf="form" [formGroup]="form" (ngSubmit)="createItem()"> -->
+  <ion-list>
+       <ion-item text-wrap>
+         <p>{{kesalahan}}</p>
+        </ion-item>
+        
+      <!-- <ion-item  tappable (click)="play(videoCapture)" text-wrap [hidden]="videoCapture === null">
+      {{ videoCapture }}
+    </ion-item>
+    <ion-item *ngFor="let file of mediaFiles"  tappable (click)="play(file)" text-wrap>
+     {{ file.name }}
+    <div *ngIf="file.name === videoCapture">
+      {{ file.name }}
+      <p>{{ file.size / 1000 / 1000 | number }} MB</p>
+      </div>
+    </ion-item> -->
+    <ion-item [hidden]="videoCapture === null">
+        <ion-thumbnail item-left (click)="play(videoCapture)">
+          <video width="300px" height="300px" controls autoplay #myvideo>
+        </video>
+        </ion-thumbnail>
+         
+        </ion-item>
+      <!-- <ion-item>
+        <div class="profile-image-wrapper" (click)="takePicture()">
+            <img src="{{pathForImage(lastImage)}}" style="width: 200px" [hidden]="lastImage === null">
+            <div class="profile-image-placeholder" [hidden]="lastImage !== null">
+                <ion-icon name="image"></ion-icon>
+              </div>
+          <h3 [hidden]="lastImage !== null">Please Select Image!</h3>
+        </div>
+      </ion-item> -->
+      <ion-item><img src="{{pathForImage(lastImage)}}" style="width: 200px" [hidden]="lastImage === null"></ion-item>
+      <!-- <ion-item text-wrap>{{lastImage}}</ion-item> -->
+    <ion-item>
+      <ion-label stacked>Tarikh</ion-label>
+      <ion-datetime formControlName="tarikh" displayFormat="DD/MM/YYYY" [(ngModel)]="data.tarikh"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Masa</ion-label>
+      <ion-datetime formControlName="masa" displayFormat="h:mm A"   [(ngModel)]="data.masa"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Lokasi</ion-label>
+      <ion-input type="text" formControlName="lokasi" [(ngModel)]="data.lokasi" [class.invalid]="!form.controls.lokasi.valid && (form.controls.lokasi.dirty || submitAttempt)"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.lokasi.valid  && (form.controls.lokasi.dirty || submitAttempt)">
+      <h6>Sila masukkan lokasi</h6>
+  </ion-item>
+    <ion-item>
+      <ion-label stacked>No Kenderaan</ion-label>
+      <ion-input type="text" formControlName="nokenderaan" [(ngModel)]="data.nokenderaan" [class.invalid]="!form.controls.nokenderaan.valid && (form.controls.nokenderaan.dirty || submitAttempt)"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.nokenderaan.valid  && (form.controls.nokenderaan.dirty || submitAttempt)">
+      <h6>Sila masukkan nombor kenderaan</h6>
+  </ion-item>
+    <ion-item>
+      <ion-label stacked>Keterangan</ion-label>
+      <ion-textarea formControlName="catatan" [(ngModel)]="data.catatan" ></ion-textarea>
+</ion-item>
+  </ion-list>
+</form>
+</ion-content>

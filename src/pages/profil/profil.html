@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-navbar color="block1">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Profil</ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="edit()"><ion-icon name="person" style="font-size:20px"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+    <ion-card class="profile-top">
+        <ion-row>
+          <ion-col>
+            <div class="profile-photo">
+              <img src="assets/img/marty-avatar.png">
+            </div>
+            <button ion-button (click)="changeProfile()" block clear color="royal">Change profile picture</button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+      <ion-list class="profile-detail" >
+        <ion-item icon-left>
+          <h4><ion-icon name="contact"></ion-icon>Nama</h4>
+          <p>{{userDetails.nama}}</p>
+        </ion-item> 
+        <ion-item icon-left>
+          <h4><ion-icon name="card"></ion-icon>No MyKad</h4>
+          <p>{{userDetails.nokp}}</p>
+        </ion-item> 
+        <ion-item icon-left>
+          <h4><ion-icon name="call"></ion-icon>No Telefon</h4>
+          <p>{{userDetails.telefon}}</p>
+        </ion-item>
+        <ion-item icon-left>
+          <h4><ion-icon name="mail"></ion-icon>Alamat Emel</h4>
+          <p>{{userDetails.emel}}</p>
+        </ion-item>
+        <ion-item icon-left>
+          <h4><ion-icon name="mail"></ion-icon>Alamat</h4>
+          <p>{{userDetails.alamat}}</p>
+        </ion-item>
+        <ion-item icon-left>
+          <h4><ion-icon name="mail"></ion-icon>Poskod</h4>
+          <p>{{userDetails.poskod}}</p>
+        </ion-item>
+        <ion-item icon-left>
+          <h4><ion-icon name="mail"></ion-icon>Bandar</h4>
+          <p>{{userDetails.daerah}}</p>
+        </ion-item>
+        <ion-item icon-left>
+          <h4><ion-icon name="mail"></ion-icon>Negeri</h4>
+          <p>{{userDetails.negeri}}</p>
+        </ion-item>
+    </ion-list>
+</ion-content>

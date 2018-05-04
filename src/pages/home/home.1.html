@@ -1,0 +1,37 @@
+
+<ion-header>
+  <ion-navbar color="block1">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Aduan Trafik</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding id="home">
+  <h1>Selamat Datang ke Sistem Aduan Trafik JPJ</h1>
+ 
+  <ion-list>
+    <ion-item-sliding #item>
+      <ion-item>
+        Aduan 1
+      </ion-item> 
+      <ion-item-options side="right">
+        <button ion-button (click)="unread(item)">Papar</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  
+  <button ion-button color="dark"  (click)="logout()">Log Keluar</button>
+  <button ion-button color="dark"  (click)="camera()">Camera</button>
+  <ion-fab right bottom>
+    <button ion-fab color="block1" (click)="add()"><ion-icon name="add"></ion-icon></button>
+</ion-fab>
+
+
+</ion-content>
+
+
+

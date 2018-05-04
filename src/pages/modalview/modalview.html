@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar color="block1">
+      <ion-title>Papar Aduan</ion-title>
+      <ion-buttons end>
+      <button ion-button (click)="closeModal()"><ion-icon name="close"></ion-icon></button>
+      </ion-buttons>
+  </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding id="modalview">
+    
+    <ion-list *ngFor="let p of aduan | async">
+      <ion-item text-wrap>
+        <p>{{getKesalahanById(p.idkesalahan)}}</p>
+        <ion-badge item-end color="{{p.status}}"> {{p.status}}</ion-badge>
+      </ion-item>
+         
+     <ion-item>
+       <img height="80px" src="../assets/img/jpjlogo1.png">
+     </ion-item>
+     <ion-item>
+       <h3>Tarikh</h3>
+       {{p.tarikh | date:'dd/MM/yyyy'}}
+     </ion-item>
+     <ion-item>
+       <h3>Masa</h3>
+       {{p.masa | date:'hh:mm zzzz'}}
+     </ion-item>
+     <ion-item>
+       <h3>Lokasi</h3>
+       {{p.lokasi}}
+     </ion-item>
+     <ion-item>
+       <h3>No Kenderaan</h3>
+       {{p.nokenderaan}}
+     </ion-item>
+     <ion-item>
+       <h3>Catatan</h3>
+       {{p.catatan}}
+     </ion-item>
+ </ion-list>
+
+ <!--<ion-list>
+    <ion-item *ngFor="let p of aduan | async">
+      {{p.id}}
+    </ion-item>
+  </ion-list>
+  </ion-content>-->

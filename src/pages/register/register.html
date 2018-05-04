@@ -1,0 +1,24 @@
+<ion-header>
+
+    <ion-navbar color="block1">
+      <ion-title>Pendaftaran</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding id="register">
+    <ion-img src="images/jpjlogo.png"></ion-img>
+    <ion-list>
+    <ion-item>
+      <ion-label floating>Email Address</ion-label>
+      <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Password </ion-label>
+        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+      <button ion-button block color="block1" (click)="register(user)" margin-top="20px">Daftar</button>
+    </ion-list>
+  </ion-content>
+  

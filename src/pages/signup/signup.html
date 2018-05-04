@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar color="block1">
+      <ion-title>Pendaftaran</ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-content padding id="signup">
+  
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Nama</ion-label>
+      <ion-input type="text" [(ngModel)]="user.nama"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>No MyKad</ion-label>
+      <ion-input type="text" [(ngModel)]="user.mykad"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label stacked>Emel</ion-label>
+      <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Kata Laluan</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+        
+  </ion-list>
+    
+<button ion-button block (click)="signup(user)">Daftar</button>
+
+
+</ion-content>
